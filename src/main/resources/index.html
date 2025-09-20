@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户信息表单</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .reset-btn {
+            background-color: #f44336;
+        }
+
+        .reset-btn:hover {
+            background-color: #da190b;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e8;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>${name}信息表单</h1>
+    <form id="userForm">
+        <div class="form-group">
+            <label for="name">姓名 (Name):</label>
+            <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+        </div>
+
+        <div class="form-group">
+            <label for="age">年龄 (Age):</label>
+            <input type="number" id="age" name="age" min="1" max="120" required placeholder="请输入您的年龄">
+        </div>
+
+        <div class="button-group">
+            <button type="submit">提交</button>
+            <button type="reset" class="reset-btn">重置</button>
+        </div>
+    </form>
+
+    <div id="result" class="result">
+        <h3>提交的信息:</h3>
+        <p><strong>姓名:</strong> <span id="resultName"></span></p>
+        <p><strong>年龄:</strong> <span id="resultAge"></span></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('userForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+
+        document.getElementById('resultName').textContent = name;
+        document.getElementById('resultAge').textContent = age;
+        document.getElementById('result').style.display = 'block';
+
+        // 滚动到结果区域
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // 重置表单时隐藏结果
+    document.getElementById('userForm').addEventListener('reset', function() {
+        document.getElementById('result').style.display = 'none';
+    });
+</script>
+</body>
+</html>
