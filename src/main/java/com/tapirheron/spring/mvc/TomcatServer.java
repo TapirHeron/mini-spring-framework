@@ -25,6 +25,7 @@ public class TomcatServer {
 
     @PostConstruct
     public void start() {
+        System.out.println("启动Tomcat");
         // 重置日志
         LogManager.getLogManager().reset();
         SLF4JBridgeHandler.removeHandlersForRootLogger();
@@ -47,9 +48,10 @@ public class TomcatServer {
         context.addServletMappingDecoded("/*", "dispatcherServlet");
         try {
             tomcat.start();
-        } catch (LifecycleException ignore) {
+            log.info("Tomcat启动，正在监听{}", port);
+        } catch (LifecycleException e) {
+            e.printStackTrace();
         }
 
-        log.info("Tomcat启动，正在监听{}", port);
     }
 }

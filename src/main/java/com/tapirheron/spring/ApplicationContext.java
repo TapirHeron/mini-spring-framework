@@ -1,9 +1,11 @@
 package com.tapirheron.spring;
 
+import lombok.Data;
 import lombok.Getter;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -19,18 +21,20 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
+@Data
 public class ApplicationContext {
 
-    @Getter
     private final Map<String, Object> ioc;
     private final Map<String, Object> loadingIoc;
     private final Map<String, BeanDefinition> beanDefinitionMap;
-    @Getter
     private final List<BeanPostProcessor> beanPostProcessors;
     private final Map<String, String> configValueMap;
 
@@ -123,8 +127,7 @@ public class ApplicationContext {
             try {
                 Constructor<?> constructor = beanDefinition.getConstructor();
                 bean = constructor.newInstance();
-            } catch (Exception ignore) {
-            }
+            } catch (Exception ignore) {}
             loadingIoc.put(beanDefinition.getBeanName(), bean);
         }
 
@@ -201,24 +204,60 @@ public class ApplicationContext {
     }
 
     private List<Class<?>> scanPackage(String packageName) {
-        URL resource = this.getClass()
-                .getClassLoader()
-                .getResource(packageName.replace(".", File.separator));
-        Path path = null;
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        String path = packageName.replace(".", "/"); // 统一用/作为分隔符
         List<Class<?>> classes = new ArrayList<>();
-        if (resource != null) {
-            try {
-                path = Paths.get(resource.toURI());
-            } catch (URISyntaxException e) {
-                throw new RuntimeException(e);
-            }
-        }
 
         try {
-            if (path == null) {
-                return classes;
+            Enumeration<URL> resources = classLoader.getResources(path);
 
+            while (resources.hasMoreElements()) {
+                URL resource = resources.nextElement();
+
+                if (resource.getProtocol().equals("file")) {
+                    // 处理本地文件系统资源（IDE环境）
+                    handleFileResource(resource, packageName, classes);
+                } else if (resource.getProtocol().equals("jar")) {
+                    // 处理JAR包内资源（JAR运行环境）
+                    handleJarResource(resource, packageName, classes);
+                }
             }
+        } catch (IOException e) {
+            throw new RuntimeException("扫描包失败", e);
+        }
+
+        return classes;
+    }
+
+    private void handleJarResource(URL resource, String packageName, List<Class<?>> classes) {
+        // 解析JAR URL格式：jar:file:/xxx.jar!/{packagePath}
+        String jarUrl = resource.getFile();
+        String[] jarParts = jarUrl.split("!");
+        String jarFilePath = jarParts[0].substring("file:".length()); // 提取JAR文件路径
+
+        try (JarFile jarFile = new JarFile(jarFilePath)) {
+            Enumeration<JarEntry> entries = jarFile.entries();
+            String packagePath = packageName.replace(".", "/") + "/";
+
+            while (entries.hasMoreElements()) {
+                JarEntry entry = entries.nextElement();
+                String entryName = entry.getName();
+
+                if (entryName.startsWith(packagePath) && entryName.endsWith(".class")) {
+                    String className = entryName.replace("/", ".")
+                            .substring(0, entryName.length() - 6);
+                    try {
+                        Class<?> clazz = Class.forName(className);
+                        classes.add(clazz);
+                    } catch (ClassNotFoundException ignore) {}
+                }
+            }
+        } catch (Exception ignore) {}
+    }
+
+    private void handleFileResource(URL resource, String packageName, List<Class<?>> classes) {
+        try {
+            Path path = Paths.get(resource.toURI());
             Files.walkFileTree(path, new SimpleFileVisitor<>() {
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
@@ -239,8 +278,8 @@ public class ApplicationContext {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return classes;
     }
+
 
     public <T> T getBean(String name) {
         if (ioc.containsKey(name)) {
