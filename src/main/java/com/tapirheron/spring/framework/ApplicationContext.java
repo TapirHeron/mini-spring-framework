@@ -1,8 +1,6 @@
 package com.tapirheron.spring;
 
 import lombok.Data;
-import lombok.Getter;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +9,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -28,6 +25,12 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+
+
+/**
+ * @author TapirHorn
+ * @date 2021/12/31
+ */
 
 @Data
 public class ApplicationContext {
