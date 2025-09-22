@@ -5,7 +5,6 @@ import com.tapirheron.spring.framework.Autowired;
 import com.tapirheron.spring.framework.Componet;
 import com.tapirheron.spring.framework.PostConstruct;
 import com.tapirheron.spring.framework.properties.ConfigurationProperties;
-import com.tapirheron.spring.framework.properties.Value;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

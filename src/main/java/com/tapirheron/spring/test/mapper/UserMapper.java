@@ -8,4 +8,6 @@ import com.tapirheron.spring.test.entity.UserEntity;
 public interface UserMapper extends BaseMapper<UserEntity> {
 
     boolean addUser(UserEntity userEntity);
+
+    boolean executeAddQuery(String sql);
 }

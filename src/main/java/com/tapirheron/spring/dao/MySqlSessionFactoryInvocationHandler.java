@@ -23,6 +23,7 @@ import java.util.Objects;
 @Slf4j
 @Data
 @Componet
+@SuppressWarnings("all")
 public class MySqlSessionFactoryInvocationHandler implements InvocationHandler {
 
 
@@ -39,13 +40,25 @@ public class MySqlSessionFactoryInvocationHandler implements InvocationHandler {
             }
             return method.invoke(applicationContext.getBean(proxy.getClass()), args);
         }
-
+        if (method.getReturnType() == boolean.class) {
+            return executeBoolean(args[0].toString());
+        }
 
         return executeSql(args[0].toString(), method, method.getReturnType());
     }
 
+    private boolean executeBoolean(String sql) throws Exception {
+        log.info("正在执行boolean sql\t{}", sql);
+        try (PreparedStatement statement = mySqlSessionFactory.getConnection().prepareStatement(sql)) {
+            return !statement.execute(sql);
+        } catch (SQLException e) {
+            log.error("准备SQL语句时发生异常，SQL: {}, 错误信息: {}", sql, e.getMessage());
+            return false;
+        }
+    }
+
     private <T> T executeSql(String sql, Method method, Class<T> returnType) throws Exception {
-        log.info("正在执行sql\t{}", sql);
+        log.info("正在执行boolean sql\t{}", sql);
         try (PreparedStatement statement = mySqlSessionFactory.getConnection().prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
             if (!resultSet.next()) {

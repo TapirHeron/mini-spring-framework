@@ -55,17 +55,15 @@ public class UserController {
     }
     @RequestMapping("/add")
     @ResponseBody
-    public UserEntity addUser(@Param("name") String name, @Param("age") int age, @Param("id") int id) {
+    public boolean addUser(@Param("name") String name, @Param("age") int age, @Param("id") int id) {
         String sql = SQLQuery.insertBuilder()
                 .insertInto("user")
                 .assign(SQLQuery.assginmentBuilder()
-                        .assign("name", name)
+                        .assign("name", "'".concat(name).concat("'"))
                         .assign("age", String.valueOf(age))
                         .assign("id", String.valueOf(id))
                         .build())
                 .build();
-        UserEntity userEntity = userMapper.executeQuery(sql);
-        System.out.println(userEntity);
-        return userEntity;
+        return userMapper.executeAddQuery(sql);
     }
 }

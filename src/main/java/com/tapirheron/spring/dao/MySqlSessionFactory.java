@@ -6,11 +6,9 @@ import com.tapirheron.spring.framework.Order;
 import com.tapirheron.spring.framework.PostConstruct;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-
 import java.lang.reflect.Proxy;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import java.sql.SQLException;
 
 @Data
