@@ -4,77 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee44c7e5-7d26-477a-b9f1-702004954cc9" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/BaseMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/Column.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/DatabaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/Id.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/MySqlSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/MySqlSessionFactoryInvocationHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/SqlDriverConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/AbstractBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/AssginmentBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/AssignmentStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/DeleteBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/DeleteStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/FromStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/InsertBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/InsertStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/SQLQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/SelectBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/SelectStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/SetBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/SetStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/UpdateBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/UpdateStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/WhereBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/sqlbuilder/WhereStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/properties/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/properties/EnableConfigurationProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/properties/Value.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/Transactionnal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/config/MyProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/config/MySecondProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/mapper/UserMapper.java" afterDir="false" />
+    <list default="true" id="ee44c7e5-7d26-477a-b9f1-702004954cc9" name="更改" comment="完成dao查询操作">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/ApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Autowired.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Autowired.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Bean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Bean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/BeanDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/BeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/BeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Componet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Componet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/dao/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/PostConstruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/PostConstruct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/SpringApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/SpringApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/framework/properties/ConfigurationProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/ModelAndView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/ModelAndView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/Param.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/RequestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/RequestMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/ResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/ResponseBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/TomcatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/TomcatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/WebHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/WebHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/JSONReturnTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/JSONReturnTypeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/LocalReturnTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/LocalReturnTypeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/ReturnType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/ReturnType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/ReturnTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/ReturnTypeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/TextReturnTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/TextReturnTypeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/WebFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/mvc/returns/type/handler/WebFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/TestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/config/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/config/TestConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/filter/EncodeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tapirheron/spring/test/filter/EncodeFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,8 +142,17 @@
       <workItem from="1758500113345" duration="6427000" />
       <workItem from="1758508463964" duration="3422000" />
       <workItem from="1758527886386" duration="6104000" />
-      <workItem from="1758536666717" duration="13617000" />
+      <workItem from="1758536666717" duration="14492000" />
     </task>
+    <task id="LOCAL-00001" summary="完成dao查询操作">
+      <option name="closed" value="true" />
+      <created>1758550586985</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758550586985</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +169,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="daoDev" />
                       </list>
                     </value>
                   </entry>
@@ -240,6 +180,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成dao查询操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成dao查询操作" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
