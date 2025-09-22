@@ -1,4 +1,4 @@
-package com.tapirheron.spring;
+package com.tapirheron.spring.framework;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

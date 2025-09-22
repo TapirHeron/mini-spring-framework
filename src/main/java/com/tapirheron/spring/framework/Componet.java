@@ -1,4 +1,4 @@
-package com.tapirheron.spring;
+package com.tapirheron.spring.framework;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -17,4 +17,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Componet {
+    String name() default "";
 }

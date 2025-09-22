@@ -1,6 +1,6 @@
 package com.tapirheron.spring.test.filter;
 
-import com.tapirheron.spring.Componet;
+import com.tapirheron.spring.framework.Componet;
 import com.tapirheron.spring.mvc.Filter;
 import com.tapirheron.spring.mvc.returns.type.handler.WebFilter;
 import jakarta.servlet.ServletException;

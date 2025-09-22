@@ -1,14 +1,14 @@
 package com.tapirheron.spring.test;
 
-import com.tapirheron.spring.Application;
-import com.tapirheron.spring.ApplicationContext;
-import com.tapirheron.spring.SpringApplication;
-import lombok.Synchronized;
+import com.tapirheron.spring.framework.Application;
+import com.tapirheron.spring.framework.ApplicationContext;
+import com.tapirheron.spring.framework.SpringApplication;
 
 @SpringApplication
 public class TestApplication {
 
     public static void main(String[] args) {
-       Application.run(TestApplication.class, args);
+
+        ApplicationContext run = Application.run(TestApplication.class, args);
     }
 }
